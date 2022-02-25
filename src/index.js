@@ -5,6 +5,9 @@ import App from './App';
 import Potato from './Potato';
 import reportWebVitals from './reportWebVitals';
 
+
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Potato value={2} />
