@@ -1,4 +1,8 @@
 body{
     margin: 50px;
-    background-color: aquamarine;
+    background-color: rgb(216, 123, 123);
+}
+
+.book{
+    background-color: rgb(176, 126, 223);
 }
