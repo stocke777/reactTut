@@ -1,24 +1,47 @@
 import React from 'react'
 import "./Potato.css";
-export default function Potato(props) {
+
+
+
+export default function BookList(props) {
     console.log(props)
   return (
     <div>
-      <Book/>
-      Potato {props.value}
+      <div className="booklist">
+        {books.map((book)=>{
+          return <Book book={book}/>
+        })}
+      </div>
+      
     </div>
   )
 }
 
-const Book = ()=> {
+const Book = (props)=> {
+  const {author, title, img} = props.book
   return (
     <div className='book'>
-      <Title/>
-      <Author/>
-      <Image/>
+      <img src={img} alt="" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
     </div>
   )
 }
-const Title = () => <h1 style={{color:'#617d98'}}>This is the title</h1>
-const Author = () => <h1>John Doe</h1>
-const Image = ()=> <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Electronics/Clearance/Clearance_store_Desktop_CC_1x._SY304_CB628315133_.jpg" alt="" />
+
+const books = [
+  {
+    'author': "Astro",
+    'title': "to Astro World",
+    'img': "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F38%2F2019%2F01%2F12214257%2Fchefs-what-they-do-f9d9ce8a.jpg"
+  },
+  {
+    'author': "Bronto",
+    'title': "to Bronto World",
+    'img': "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F38%2F2019%2F01%2F12214257%2Fchefs-what-they-do-f9d9ce8a.jpg"
+  },
+  {
+    'author': "Catto",
+    'title': "to Catto World",
+    'img': "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F38%2F2019%2F01%2F12214257%2Fchefs-what-they-do-f9d9ce8a.jpg"
+  }
+]

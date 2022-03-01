@@ -1,8 +1,19 @@
 body{
     margin: 50px;
-    background-color: rgb(216, 123, 123);
+    background-color: rgb(200, 147, 216);
 }
 
 .book{
-    background-color: rgb(139, 116, 160);
+    background-color: rgb(201, 195, 216);
+    width: 200px;
+}
+
+.book>img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.booklist{
+    display: flex;
+    justify-content: space-around;
 }

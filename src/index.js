@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Potato from './Potato';
 import reportWebVitals from './reportWebVitals';
+import BookList from './Potato';
 
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Potato value={2} />
+    <BookList value={2} />
   </React.StrictMode>,
   document.getElementById('root')
 );
