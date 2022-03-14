@@ -3,8 +3,14 @@ import "./calc.css";
 import React  from "react";
 
 export default function Calculator(props){
-
-    const [output, setoutput] = useState("")
+ 
+    const [numbers, setnumbers] = useState({
+        first: "",
+        second: "",
+        result: "",
+        turn: 0,
+        operator: ""
+    })
 
     const digits = []
     const createDigits = () => {
@@ -13,19 +19,44 @@ export default function Calculator(props){
         }
     }
     const digitHandler = (digit) => {
-        console.log("dosiaj")
-        setoutput(output + digit)
+        if(numbers.turn === 0){
+            setnumbers({...numbers, first: numbers.first + digit});
+        }else if(numbers.turn === 1){
+            setnumbers({...numbers, second: numbers.second + digit});
+        }else{
+            resultHandler();
+            setnumbers({...numbers, first: numbers.result, turn: numbers.turn - 1, second: "", result: ""});
+        }
+
     }
 
-    const opertorHandler = (type) => {
+    const operatorHandler = (type) => {
+        console.log(numbers)
+        console.log(typeof(numbers.first), typeof(numbers.turn), numbers.turn)
+        setnumbers({...numbers, turn: numbers.turn + 1, operator: type})
+    }
 
+    const resultHandler = () => {
+        console.log(numbers)
+        let res = 0;
+        if(numbers.operator==="+"){
+            res = Number(numbers.first) + Number(numbers.second);
+        }else if(numbers.operator==="-"){
+            res = Number(numbers.first) - Number(numbers.second);
+        }else if(numbers.operator==="*"){
+            res = Number(numbers.first) * Number(numbers.second);
+        }else {
+            res = Number(numbers.first) / Number(numbers.second);
+        }
+        setnumbers({...numbers, result: res});
+        console.log(res)
     }
 
     return (
         <div className="calcBody">
 
-            
-            <div className="inputText">{output}</div>
+            {numbers.result}
+            <div className="inputText">{numbers.result}</div>
 
             {createDigits()}
             <div className="digits">
@@ -38,7 +69,7 @@ export default function Calculator(props){
             <button onClick={()=>operatorHandler("-")}>-</button>
             <button onClick={()=>operatorHandler("*")}>*</button>
             <button onClick={()=>operatorHandler("/")}>/</button>
-            <button className="submit">=</button>
+            <button onClick={()=>resultHandler()} className="submit">=</button>
             
         </div>
     )
