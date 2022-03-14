@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import BookList from './Potato';
+import Calculator from './calc';
 
 
 
@@ -11,6 +12,7 @@ import BookList from './Potato';
 ReactDOM.render(
   <React.StrictMode>
     <BookList value={2} />
+    <Calculator />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,0 +1,46 @@
+.calcBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: aliceblue;
+    width: 500px;
+    height: 100%;
+    padding: 10%;
+    border-radius: 10%;
+    flex-wrap: wrap;
+}
+
+button{
+    width: 80px;
+    height: 80px;
+    border-radius: 20%;
+}
+
+.inputText{
+    background-color: white;
+    color: black;
+    border-style: none;
+    outline: none;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+    font-size: 2em;
+    padding: 10px;
+    margin: 20px;
+    width: 100%;
+    text-align:right ;
+}
+
+.digits{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10% 20%;
+}
+
+.submit{
+    width: 400px;
+    color: #ffffff;
+    border-radius: 10px;
+    background: #e49ede;
+}
